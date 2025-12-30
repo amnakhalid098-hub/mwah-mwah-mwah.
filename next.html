@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You stayed</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Patrick Hand', cursive;
+  background: linear-gradient(135deg, #fff0f6, #e6f4ff);
+  color: #5a3a4a;
+  overflow: hidden;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #c97b9a;
+}
+
+p {
+  max-width: 550px;
+  line-height: 1.7;
+  font-size: 1.15em;
+}
+
+/* button */
+button {
+  background: #ffd6e0;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 1.05em;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+.secret {
+  display: none;
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #8b4a65;
+}
+
+/* doodles */
+.star {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffc8dd;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ffb3c6;
+  transform: rotate(-45deg);
+  border-radius: 50% 50% 0 0;
+  opacity: 0.4;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #ffb3c6;
+  border-radius: 50%;
+}
+.heart::before { top: -15px; left: 0; }
+.heart::after { left: 15px; top: 0; }
+</style>
+</head>
+
+<body>
+
+<!-- doodles -->
+<div class="heart" style="top:40px; left:40px;"></div>
+<div class="heart" style="bottom:60px; right:50px;"></div>
+
+<div class="star" style="top:20%; left:70%;"></div>
+<div class="star" style="top:60%; left:20%;"></div>
+<div class="star" style="top:75%; left:80%;"></div>
+
+<div class="container">
+  <h1>You stayed 🌙</h1>
+
+  <p>
+    That means something.<br><br>
+    Not everyone chooses to stay,
+    and somehow… you did.
+  </p>
+
+  <button onclick="reveal()">Tap gently 🤍</button>
+
+  <div id="secret" class="secret">
+    This place exists because of you.<br>
+    And maybe it always will.
+  </div>
+</div>
+
+<script>
+function reveal() {
+  document.getElementById("secret").style.display = "block";
+}
+</script>
+
+</body>
+</html>
