@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Friendship Scrapbook</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Patrick Hand', cursive;
+  background: linear-gradient(135deg, #ffd6e0, #d6f0ff, #fff0d6);
+  color: #5a3a4a;
+  overflow: hidden; /* IMPORTANT: no scrolling */
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  gap: 25px;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #c97b9a;
+}
+
+p {
+  max-width: 600px;
+  line-height: 1.7;
+  font-size: 1.15em;
+}
+
+.choice {
+  margin-top: 20px;
+}
+
+.choice-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+button {
+  background: #ffd6e0;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.hidden-text {
+  display: none;
+  margin-top: 15px;
+  font-size: 1.2em;
+}
+
+/* tiny doodle */
+.heart {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: pink;
+  transform: rotate(-45deg);
+  border-radius: 50% 50% 0 0;
+  opacity: 0.5;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: pink;
+  border-radius: 50%;
+}
+.heart::before { top: -18px; left: 0; }
+.heart::after { left: 18px; top: 0; }
+</style>
+</head>
+
+<body>
+
+<!-- doodles -->
+<div class="heart" style="top:30px; left:30px;"></div>
+<div class="heart" style="bottom:40px; right:40px;"></div>
+
+<div class="main">
+  <h1>Hey, you made it here 💛</h1>
+
+  <p>
+    Welcome to our little pastel world 🤍<br><br>
+    This is a small corner of the internet that feels like us.A place where<br>
+    memories feel safe, and everything is gentle.No matter where life takes<br>
+    us, this will always be our safe place and will always stay here. Its not<br>
+    js a page,its the piece of us,my emotions.
+  </p>
+
+  <div class="choice">
+    <h2>Do you want to see what comes next?</h2>
+
+    <div class="choice-buttons">
+      <button onclick="goYes()">Yes</button>
+      <button onclick="goNo()">No</button>
+    </div>
+
+    <p id="noText" class="hidden-text">u b*tch.</p>
+  </div>
+</div>
+
+<script>
+function goYes() {
+  window.location.href = "next.html";
+}
+
+function goNo() {
+  document.getElementById("noText").style.display = "block";
+}
+</script>
+
+</body>
+</html>
